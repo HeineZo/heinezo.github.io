@@ -1,0 +1,21 @@
+---
+import { BentoGrid, BentoGridItem } from "@/components/BentoGrid";
+import items from "@/content/data/skills.json";
+---
+
+<div id='compétences' class="w-full flex flex-col items-start gap-8">
+	<h2>Compétences</h2>
+	<BentoGrid>
+		{
+			items.map((item, i) => (
+				<BentoGridItem
+					title={item.title}
+					description={item.description}
+					color={item.color}	
+					icon={item.icon}
+					className={i === 3 || i === 6 ? 'md:col-span-2' : ''}
+				/>
+			))
+		}
+	</BentoGrid>
+</div>

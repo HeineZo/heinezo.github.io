@@ -1,0 +1,27 @@
+[
+	{
+		"name": "Mail",
+		"icon": "fa-envelope",
+        "href": "mailto:nzomorvan@gmail.com"
+	},
+	{
+		"name": "Linkedin",
+		"icon": "fa-brands fa-linkedin-in",
+        "href": "www.linkedin.com/in/enzomorvan"
+	},
+    {
+        "name": "Curriculum Vitae",
+        "icon": "fa-paperclip",
+        "href": "/src/content/file/cv.pdf"
+    },
+    {
+        "name": "Github",
+        "icon": "fa-brands fa-github",
+        "href": "https://www.github.com/heinezo"
+    },
+    {
+        "name": "Discord",
+        "icon": "fa-brands fa-discord",
+        "href": "https://discord.gg/7ZzvzZ"
+    }
+]

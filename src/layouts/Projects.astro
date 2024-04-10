@@ -1,0 +1,56 @@
+---
+import ProjectCard from '@/components/ProjectCard.astro';
+import Reveal from '@/components/Reveal';
+import { TracingBeam } from '@/components/TracingBeam';
+import { Button } from '@/components/ui/button';
+import projectsData from '@/content/data/projects.json';
+
+const projects = projectsData.slice(0, -1);
+const lastProject = projectsData.slice(-1)[0];
+
+const reposData = await fetch('https://api.github.com/users/HeineZo/repos');
+const repos = await reposData.json();
+const nbProjects = repos.length - projects.length;
+---
+
+<div id='projets' class='w-full flex flex-col items-start gap-8'>
+	<h2>Projets</h2>
+	<TracingBeam client:load>
+		<div class='flex flex-col gap-16 w-full max-w-5xl'>
+			{
+				projects.map((project) => (
+					<Reveal client:load>
+						<ProjectCard
+							title={project.title}
+							description={project.description}
+							img={project.img}
+							link={project.link}
+							languages={project.languages}
+						/>
+					</Reveal>
+				))
+			}
+			<div class='relative'>
+				<div
+					class='flex flex-col absolute w-full h-full p-8 backdrop-blur-md justify-center gap-4 bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30'>
+					<h3>
+						Il reste <span
+							class='bg-gradient-to-r from-foreground to-orange-400 text-transparent bg-clip-text'
+							>{isNaN(nbProjects) ? 8 : nbProjects} projets</span
+						> à découvrir
+					</h3>
+					<Button className='w-fit'>Découvrir</Button>
+				</div>
+				<div class='p-8'>
+					<ProjectCard
+						title={lastProject.title}
+						description={lastProject.description}
+						img={lastProject.img}
+						link={lastProject.link}
+						languages={lastProject.languages}
+					/>
+				</div>
+			</div>
+		</div>
+	</TracingBeam>
+</div>

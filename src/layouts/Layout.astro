@@ -1,4 +1,6 @@
 ---
+import Navbar from '@/layouts/Navbar.astro';
+import Footer from './Footer.astro';
 interface Props {
 	title: string;
 }
@@ -7,45 +9,62 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang='en'>
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+		<meta charset='UTF-8' />
+		<meta name='description' content='Astro description' />
+		<meta name='viewport' content='width=device-width' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.png' />
+		<script
+			src='https://kit.fontawesome.com/bdaa21e6ed.js'
+			crossorigin='anonymous'></script>
+		<meta name='generator' content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<Navbar />
+		<main class='container px-6 md:px-8 mt-14 flex flex-col gap-16'>
+			<slot />
+		</main>
+		<Footer />
 	</body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+
+<script is:inline>
+	console.log(
+		`
+   _____       __   __                      ______                
+  / ____|     /_/  /_/                     |  ____|               
+ | |     _ __ ___  ___   _ __   __ _ _ __  | |__   _ __  _______  
+ | |    | '__/ _ \\/ _ \\ | '_ \\ / _\`|  '__| |  __| | '_ \\|_  / _ \\
+ | |____| | |  __/  __/ | |_) | (_| | |    | |____| | | |/ / (_) |
+  \\_____|_|  \\___|\\___| | .__/ \\__,_|_|    |______|_| |_/___\\___/ 
+                        | |                                       
+                        |_|                                       
+		`
+	);
+	const getThemePreference = () => {
+		if (
+			typeof localStorage !== 'undefined' &&
+			localStorage.getItem('theme')
+		) {
+			return localStorage.getItem('theme');
+		}
+		return window.matchMedia('(prefers-color-scheme: dark)').matches
+			? 'dark'
+			: 'light';
+	};
+	const isDark = getThemePreference() === 'dark';
+	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+
+	if (typeof localStorage !== 'undefined') {
+		const observer = new MutationObserver(() => {
+			const isDark = document.documentElement.classList.contains('dark');
+			localStorage.setItem('theme', isDark ? 'dark' : 'light');
+		});
+		observer.observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ['class'],
+		});
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>
+</script>

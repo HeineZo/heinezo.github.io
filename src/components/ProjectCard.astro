@@ -1,0 +1,38 @@
+---
+import { cn } from '@/lib/utils';
+import BrandIcon from './ui/BrandIcon';
+import { Button } from './ui/button';
+import { Image } from 'astro:assets';
+import Reveal from './Reveal';
+
+const { title, description, img, link, languages, className } = Astro.props;
+---
+
+<div class={cn('flex gap-8 w-full flex-col lg:flex-row', className)} >
+	<Image
+		src={img}
+		alt='Couverture du projet'
+		width={500}
+		height={300}
+		loading='eager'
+		class='rounded-xl aspect-video max-w-md w-full object-cover object-top shadow'
+	/>
+	<div class='flex flex-col justify-between gap-4'>
+		<div class='flex flex-col gap-2'>
+			<h3>{title}</h3>
+			<span class='flex gap-2'>
+				{
+					languages.map((lang: string) => (
+						<BrandIcon name={lang} client:load />
+					))
+				}
+			</span>
+			<p class='text-muted-foreground'>
+				{description}
+			</p>
+		</div>
+		<a href={link}>
+			<Button variant='secondary' className='w-fit'>Voir</Button>
+		</a>
+	</div>
+</div>

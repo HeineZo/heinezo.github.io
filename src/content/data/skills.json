@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Travail d'équipe",
+        "description": "Mon expérience en entreprise et mes nombreux projets personnels m'ont amenés à prendre le leadership et à développer un bon esprit d'équipe",
+        "icon": "fa-people-group",
+        "color": "indigo"
+    },
+    {
+        "title": "Curieux",
+        "description": "J'adore apprendre et explorer de nouvelles technologies, je suis toujours à la recherche de nouveaux projets",
+        "icon": "fa-magnifying-glass",
+        "color": "teal"
+    },
+    {
+        "title": "Rigoureux",
+        "description": "Je me bats sans relâche pour éviter le code bricolé et assurer un code propre, bien structuré",
+        "icon": "fa-check",
+        "color": "orange"
+    },
+    {
+        "title": "Créatif",
+        "description": "Polyvalent, je m'inspire énormément des tendances actuelles et des applications que j'utilise pour créer des interfaces modernes et intuitives",
+        "icon": "fa-lightbulb",
+        "color": "yellow"
+    },
+    {
+        "title": "Passionné",
+        "description": "Je suis toujours à la recherche de nouveaux projets pour donner vie à mes idées et utiliser les dernières technologies que j'ai découverts",
+        "icon": "fa-heart",
+        "color": "rose"
+    }
+]
