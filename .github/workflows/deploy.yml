@@ -1,0 +1,34 @@
+name: Déploiement
+
+on:
+    # A chaque fois qu'un push sur master est fait
+    push:
+        branches: [master]
+    # Permet de déployer manuellement depuis Github
+    workflow_dispatch:
+
+#Clône le repo et créer une page pour le déploiement
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout your repository using git
+              uses: actions/checkout@v4
+            - name: Install, build, and upload your site
+              uses: withastro/action@v2
+
+    deploy:
+        needs: build
+        runs-on: ubuntu-latest
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
