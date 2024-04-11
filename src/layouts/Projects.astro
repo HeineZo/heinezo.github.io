@@ -39,11 +39,11 @@ const nbProjects = repos.length - projects.length;
 							>{isNaN(nbProjects) ? 8 : nbProjects} projets</span
 						> à découvrir
 					</h3>
-					<Button className='w-fit' asChild>
-						<a href='https://github.com/HeineZo?tab=repositories'>
-							Découvrir
-						</a>
-					</Button>
+					<a
+						href='https://github.com/HeineZo?tab=repositories'
+						class='w-fit'>
+						<Button> Découvrir </Button>
+					</a>
 				</div>
 				<div class='p-8'>
 					<ProjectCard

@@ -10,7 +10,7 @@ import links from '@/data/links.json';
 	</span>
 	<div class='flex gap-8 flex-wrap'>
 		{
-			links.map((link) => (
+			links.map((link) => link.href && (
 				<a aria-label={link.name} href={link.href} class="text-foreground/80 hover:text-foreground/50 text-2xl">
 					<i class={` fa-solid ${link.icon}`} />
 				</a>
