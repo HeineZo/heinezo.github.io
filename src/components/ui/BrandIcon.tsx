@@ -19,7 +19,7 @@ export default function BrandIcon({ name }: Props) {
 						loading='lazy'
 						alt={name}
 						src={`https://cdn.simpleicons.org/${name}`}
-						className='dark:invert dark:grayscale'
+						className='dark:invert dark:grayscale -z-10'
 					/>
 				</TooltipTrigger>
 				<TooltipContent>
