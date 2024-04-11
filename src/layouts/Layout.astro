@@ -1,6 +1,7 @@
 ---
 import Navbar from '@/layouts/Navbar.astro';
 import Footer from './Footer.astro';
+import { SEO } from 'astro-seo';
 interface Props {
 	title: string;
 }
@@ -11,6 +12,7 @@ const { title } = Astro.props;
 <!doctype html>
 <html lang='en'>
 	<head>
+		<title>{title}</title>
 		<meta charset='UTF-8' />
 		<meta name='description' content='Astro description' />
 		<meta name='viewport' content='width=device-width' />
@@ -20,7 +22,18 @@ const { title } = Astro.props;
 			is:inline
 			crossorigin='anonymous'></script>
 		<meta name='generator' content={Astro.generator} />
-		<title>{title}</title>
+		<meta name="description" content="Passionné par les architectures et le code propre, je passe mon temps libre à construire des projets personnels qui me poussent à aller plus loin dans ma réflexion et mes compétences">
+		<meta name="keywords" content="portfolio, développement fullstack, développement frontend, react, tailwind, vuejs, nextjs, notion, figma, alternance, vannes, projets, compétences">
+		<meta name="author" content="Enzo Morvan">
+		<meta property="og:title" content="Portfolio d'Enzo Morvan">
+		<meta property="og:description" content="Passionné par les architectures et le code propre, je passe mon temps libre à construire des projets personnels qui me poussent à aller plus loin dans ma réflexion et mes compétences">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://heinezo.github.io">
+		<meta property="og:image" content="/preview.jpg">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="Portfolio d'Enzo Morvan">
+		<meta name="twitter:description" content="Passionné par les architectures et le code propre, je passe mon temps libre à construire des projets personnels qui me poussent à aller plus loin dans ma réflexion et mes compétences">
+		<meta name="twitter:image" content="/preview.jpg">
 	</head>
 	<body>
 		<Navbar />
@@ -29,11 +42,9 @@ const { title } = Astro.props;
 		</main>
 		<Footer />
 	</body>
-</html>
-
-<script is:inline>
-	console.log(
-		`
+	<script is:inline>
+		console.log(
+			`
    _____       __   __                      ______                
   / ____|     /_/  /_/                     |  ____|               
  | |     _ __ ___  ___   _ __   __ _ _ __  | |__   _ __  _______  
@@ -43,31 +54,33 @@ const { title } = Astro.props;
                         | |                                       
                         |_|                                       
 		`
-	);
+		);
 
-	const getThemePreference = () => {
-		if (
-			typeof localStorage !== 'undefined' &&
-			localStorage.getItem('theme')
-		) {
-			return localStorage.getItem('theme');
+		const getThemePreference = () => {
+			if (
+				typeof localStorage !== 'undefined' &&
+				localStorage.getItem('theme')
+			) {
+				return localStorage.getItem('theme');
+			}
+			return window.matchMedia('(prefers-color-scheme: dark)').matches
+				? 'dark'
+				: 'light';
+		};
+
+		const isDark = getThemePreference() === 'dark';
+		document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+
+		if (typeof localStorage !== 'undefined') {
+			const observer = new MutationObserver(() => {
+				const isDark =
+					document.documentElement.classList.contains('dark');
+				localStorage.setItem('theme', isDark ? 'dark' : 'light');
+			});
+			observer.observe(document.documentElement, {
+				attributes: true,
+				attributeFilter: ['class'],
+			});
 		}
-		return window.matchMedia('(prefers-color-scheme: dark)').matches
-			? 'dark'
-			: 'light';
-	};
-
-	const isDark = getThemePreference() === 'dark';
-	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
-
-	if (typeof localStorage !== 'undefined') {
-		const observer = new MutationObserver(() => {
-			const isDark = document.documentElement.classList.contains('dark');
-			localStorage.setItem('theme', isDark ? 'dark' : 'light');
-		});
-		observer.observe(document.documentElement, {
-			attributes: true,
-			attributeFilter: ['class'],
-		});
-	}
-</script>
+	</script>
+</html>

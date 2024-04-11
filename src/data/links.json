@@ -21,6 +21,7 @@
     },
     {
         "name": "@enzolefrigo",
-        "icon": "fa-brands fa-discord"
+        "icon": "fa-brands fa-discord",
+        "href": "https://discord.gg"
     }
 ]
