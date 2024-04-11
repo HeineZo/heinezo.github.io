@@ -1,5 +1,4 @@
 import { cn } from '@/lib/utils';
-import Reveal from './Reveal';
 
 interface Props {
 	className?: string;

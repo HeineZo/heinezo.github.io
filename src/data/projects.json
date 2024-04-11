@@ -2,35 +2,35 @@
     {
         "title": "La Palme Verte",
         "description": "Site vitrine, blog et galerie photo réalisé pour une association étudiante de plongée sous-marine",
-        "img": "/src/images/projects/lapalmeverte.png",
+        "img": "lapalmeverte",
         "link": "http://lapalmeverte.vercel.app",
         "languages": ["Next.js", "React", "Notion", "TailwindCSS", "Vercel"]
     },
     {
         "title": "Punto",
         "description": "Application web simulant le jeu de société Punto permettant de jouer, générer, visionner l'historique des parties sur différentes bases de données",
-        "img": "/src/images/projects/punto.png",
+        "img": "punto",
         "link": "https://github.com/HeineZo/Punto",
         "languages": ["Express", "React", "MySQL", "MongoDB", "SQLite", "TailwindCSS"]
     },
     {
         "title": "DashLegends",
         "description": "Jeu vidéo de plateforme 2D joueur contre joueur en local",
-        "img": "/src/images/projects/dashlegends.png",
+        "img": "dashlegends",
         "link": "https://github.com/HeineZo/dash-legends",
         "languages": ["Python"]
     },
     {
         "title": "Onzer",
         "description": "Plateforme de streaming musical factice permettant d'ajouter des morceaux et de créer des playlists",
-        "img": "/src/images/projects/onzer.png",
+        "img": "onzer",
         "link": "https://github.com/HeineZo/onzer",
         "languages": ["Next.js", "React", "MongoDB", "TailwindCSS"]
     },
     {
         "title": "Application météo",
         "description": "Application web permettant de consulter la météo de n'importe quelle ville",
-        "img": "/src/images/projects/meteo.png",
+        "img": "meteo",
         "link": "https://github.com/HeineZo/meteo-app-vue",
         "languages": ["Vue.js", "TailwindCSS"]
     }

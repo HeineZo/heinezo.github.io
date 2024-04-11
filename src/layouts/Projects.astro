@@ -3,7 +3,7 @@ import ProjectCard from '@/components/ProjectCard.astro';
 import Reveal from '@/components/Reveal';
 import { TracingBeam } from '@/components/TracingBeam';
 import { Button } from '@/components/ui/button';
-import projectsData from '@/content/data/projects.json';
+import projectsData from '@/data/projects.json';
 
 const projects = projectsData.slice(0, -1);
 const lastProject = projectsData.slice(-1)[0];
@@ -39,7 +39,11 @@ const nbProjects = repos.length - projects.length;
 							>{isNaN(nbProjects) ? 8 : nbProjects} projets</span
 						> à découvrir
 					</h3>
-					<Button className='w-fit'>Découvrir</Button>
+					<Button className='w-fit' asChild>
+						<a href='https://github.com/HeineZo?tab=repositories'>
+							Découvrir
+						</a>
+					</Button>
 				</div>
 				<div class='p-8'>
 					<ProjectCard

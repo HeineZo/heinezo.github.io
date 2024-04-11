@@ -7,12 +7,12 @@
 	{
 		"name": "Linkedin",
 		"icon": "fa-brands fa-linkedin-in",
-        "href": "www.linkedin.com/in/enzomorvan"
+        "href": "https://www.linkedin.com/in/enzomorvan"
 	},
     {
         "name": "Curriculum Vitae",
         "icon": "fa-paperclip",
-        "href": "/src/content/file/cv.pdf"
+        "href": "/cv.pdf"
     },
     {
         "name": "Github",
@@ -20,8 +20,7 @@
         "href": "https://www.github.com/heinezo"
     },
     {
-        "name": "Discord",
-        "icon": "fa-brands fa-discord",
-        "href": "https://discord.gg/7ZzvzZ"
+        "name": "@enzolefrigo",
+        "icon": "fa-brands fa-discord"
     }
 ]
