@@ -10,18 +10,11 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang='fr'>
 	<head>
 		<title>{title}</title>
 		<meta charset='UTF-8' />
-		<meta name='description' content='Astro description' />
 		<meta name='viewport' content='width=device-width' />
-		<link rel='icon' type='image/svg+xml' href='/favicon.png' />
-		<script
-			src='https://kit.fontawesome.com/bdaa21e6ed.js'
-			is:inline
-			crossorigin='anonymous'></script>
-		<meta name='generator' content={Astro.generator} />
 		<meta name="description" content="Passionné par les architectures et le code propre, je passe mon temps libre à construire des projets personnels qui me poussent à aller plus loin dans ma réflexion et mes compétences">
 		<meta name="keywords" content="portfolio, développement fullstack, développement frontend, react, tailwind, vuejs, nextjs, notion, figma, alternance, vannes, projets, compétences">
 		<meta name="author" content="Enzo Morvan">
@@ -34,6 +27,12 @@ const { title } = Astro.props;
 		<meta name="twitter:title" content="Portfolio d'Enzo Morvan">
 		<meta name="twitter:description" content="Passionné par les architectures et le code propre, je passe mon temps libre à construire des projets personnels qui me poussent à aller plus loin dans ma réflexion et mes compétences">
 		<meta name="twitter:image" content="/preview.jpg">
+		<meta name='generator' content={Astro.generator} />
+		<link rel='icon' type='image/svg+xml' href='/favicon.png' />
+		<script
+			src='https://kit.fontawesome.com/bdaa21e6ed.js'
+			is:inline
+			crossorigin='anonymous'></script>
 	</head>
 	<body>
 		<Navbar />
