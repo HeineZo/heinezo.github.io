@@ -3,7 +3,7 @@ import {
 	TooltipContent,
 	TooltipProvider,
 	TooltipTrigger,
-} from './Tooltip';
+} from './tooltip';
 
 interface Props {
 	name: string;
