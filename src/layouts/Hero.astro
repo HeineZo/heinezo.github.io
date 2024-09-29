@@ -1,6 +1,7 @@
 ---
 import CurvedLinks from '@/components/CurvedLinks.astro';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/Button';
+import { Link } from '@/components/ui/Link';
 import { Circle } from '@/icons/Circle';
 import { MoveDown } from 'lucide-react';
 ---
@@ -19,7 +20,7 @@ import { MoveDown } from 'lucide-react';
 					</span>
 					Enzo,
 				</div>
-				20 ans, alternant développeur Fullstack
+				{new Date().getFullYear() - new Date('2003-08-13').getFullYear()} ans, apprenti ingénieur logiciel
 			</h1>
 			<p>
 				Passionné par les architectures et le code propre, je passe mon
@@ -33,10 +34,10 @@ import { MoveDown } from 'lucide-react';
 				Actuellement
 			</span>
 			<span>
-				Étudiant ingénieur Fullstack en alternance chez <Button variant='link' asChild>
-					<a href='https://https://www.abtasty.com/' target='_blank'>
+				Étudiant ingénieur logiciel en alternance chez 
+					<Link href='https://www.abtasty.com/'>
 						AB Tasty
-					</a>
+					</Link>
 				</Button>
 			</span>
 		</div>

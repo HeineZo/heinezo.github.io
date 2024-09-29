@@ -7,13 +7,13 @@
     },
     {
         "title": "Curieux",
-        "description": "J'adore apprendre et explorer de nouvelles technologies, je suis toujours à la recherche de nouveaux projets",
+        "description": "J'adore explorer et apprendre à maitriser de nouvelles technologies, je suis toujours à la recherche de nouveaux projets",
         "icon": "fa-magnifying-glass",
         "color": "teal"
     },
     {
         "title": "Rigoureux",
-        "description": "Je me bats sans relâche pour éviter le code bricolé et assurer un code propre, bien structuré",
+        "description": "J'essaye au maximum d'écrire du code propre et bien structuré, en évitant le bricolage de code",
         "icon": "fa-check",
         "color": "orange"
     },
