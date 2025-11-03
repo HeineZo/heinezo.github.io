@@ -1,0 +1,43 @@
+{
+	"common": {
+		"projects": "Projects",
+		"skills": "Skills",
+		"contact": "Contact",
+		"currently": "Currently",
+		"yearsOld": "years old",
+		"apprentice": "apprentice software engineer",
+		"discover": "Discover",
+		"remaining": "There are",
+		"projectsToDiscover": "more projects to discover",
+		"createdWith": "Created with 🌧️ and 😄"
+	},
+	"hero": {
+		"title": "Enzo,",
+		"description": "Passionate about architectures and clean code, I spend my free time building personal projects that push me to go further in my thinking and skills",
+		"currently": "Currently",
+		"student": "Software engineering student in apprenticeship at"
+	},
+	"meta": {
+		"title": "Enzo Morvan",
+		"description": "Passionate about architectures and clean code, I spend my free time building personal projects that push me to go further in my thinking and skills",
+		"keywords": "portfolio, fullstack development, frontend development, react, tailwind, vuejs, nextjs, notion, figma, apprenticeship, vannes, projects, skills",
+		"ogTitle": "Enzo Morvan's Portfolio",
+		"ogDescription": "Passionate about architectures and clean code, I spend my free time building personal projects that push me to go further in my thinking and skills"
+	},
+	"projects": {
+		"title": "Projects",
+		"remaining": "There are",
+		"many": "many",
+		"projectsToDiscover": "more projects to discover",
+		"discover": "Discover"
+	},
+	"skills": {
+		"title": "Skills"
+	},
+	"404": {
+		"title": "Unable to find this page",
+		"description": "It may have been moved or deleted",
+		"backHome": "Return to the home page"
+	}
+}
+

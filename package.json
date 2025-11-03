@@ -19,6 +19,7 @@
     "@types/react": "^18.2.73",
     "@types/react-dom": "^18.2.23",
     "astro": "^4.5.12",
+    "astro-i18next": "^1.0.0-beta.21",
     "astro-icon": "^1.1.0",
     "astro-seo": "^0.8.3",
     "class-variance-authority": "^0.7.0",

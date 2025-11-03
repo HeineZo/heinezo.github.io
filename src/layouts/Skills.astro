@@ -1,13 +1,26 @@
 ---
 import { BentoGrid, BentoGridItem } from "@/components/BentoGrid";
-import items from "@/data/skills.json";
+import { t } from '@/i18n/utils';
+import type { Locale } from '@/i18n/config';
+
+interface Props {
+	locale: Locale;
+}
+
+const { locale } = Astro.props;
+let items;
+if (locale === 'en') {
+	items = await import('@/i18n/data/skills.en.json');
+} else {
+	items = await import('@/i18n/data/skills.fr.json');
+}
 ---
 
 <div id='compétences' class="w-full flex flex-col items-start gap-8">
-	<h2>Compétences</h2>
+	<h2>{t(locale, 'skills.title')}</h2>
 	<BentoGrid>
 		{
-			items.map((item, i) => (
+			items.default.map((item, i) => (
 				<BentoGridItem
 					title={item.title}
 					description={item.description}

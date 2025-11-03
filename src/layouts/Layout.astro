@@ -1,31 +1,35 @@
 ---
 import Navbar from '@/layouts/Navbar.astro';
 import Footer from './Footer.astro';
+import { t } from '@/i18n/utils';
+import type { Locale } from '@/i18n/config';
 
 interface Props {
 	title: string;
+	locale: Locale;
 }
 
-const { title } = Astro.props;
+const { title, locale } = Astro.props;
+const lang = locale === 'en' ? 'en' : 'fr';
 ---
 
 <!doctype html>
-<html lang='fr'>
+<html lang={lang}>
 	<head>
-		<title>{title}</title>
+		<title>{t(locale, 'meta.title')}</title>
 		<meta charset='UTF-8' />
 		<meta name='viewport' content='width=device-width' />
-		<meta name="description" content="Passionné par les architectures et le code propre, je passe mon temps libre à construire des projets personnels qui me poussent à aller plus loin dans ma réflexion et mes compétences">
-		<meta name="keywords" content="portfolio, développement fullstack, développement frontend, react, tailwind, vuejs, nextjs, notion, figma, alternance, vannes, projets, compétences">
+		<meta name="description" content={t(locale, 'meta.description')}>
+		<meta name="keywords" content={t(locale, 'meta.keywords')}>
 		<meta name="author" content="Enzo Morvan">
-		<meta property="og:title" content="Portfolio d'Enzo Morvan">
-		<meta property="og:description" content="Passionné par les architectures et le code propre, je passe mon temps libre à construire des projets personnels qui me poussent à aller plus loin dans ma réflexion et mes compétences">
+		<meta property="og:title" content={t(locale, 'meta.ogTitle')}>
+		<meta property="og:description" content={t(locale, 'meta.ogDescription')}>
 		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://heinezo.github.io">
+		<meta property="og:url" content={`https://heinezo.github.io${Astro.url.pathname}`}>
 		<meta property="og:image" content="/preview.jpg">
 		<meta name="twitter:card" content="summary">
-		<meta name="twitter:title" content="Portfolio d'Enzo Morvan">
-		<meta name="twitter:description" content="Passionné par les architectures et le code propre, je passe mon temps libre à construire des projets personnels qui me poussent à aller plus loin dans ma réflexion et mes compétences">
+		<meta name="twitter:title" content={t(locale, 'meta.ogTitle')}>
+		<meta name="twitter:description" content={t(locale, 'meta.ogDescription')}>
 		<meta name="twitter:image" content="/preview.jpg">
 		<meta name='generator' content={Astro.generator} />
 		<link rel='icon' type='image/svg+xml' href='/favicon.png' />
@@ -35,11 +39,11 @@ const { title } = Astro.props;
 			crossorigin='anonymous'></script>
 	</head>
 	<body>
-		<Navbar />
+		<Navbar locale={locale} />
 		<main class='container px-6 md:px-8 mt-14 flex flex-col gap-16'>
 			<slot />
 		</main>
-		<Footer />
+		<Footer locale={locale} />
 	</body>
 	<script is:inline>
 		console.log(

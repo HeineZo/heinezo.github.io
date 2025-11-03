@@ -1,0 +1,9 @@
+---
+import { getLocaleFromPath } from '@/i18n/config';
+
+const pathname = Astro.url.pathname;
+const locale = getLocaleFromPath(pathname);
+
+return Astro.redirect(`/${locale}/404`, 302);
+---
+

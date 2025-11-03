@@ -1,0 +1,45 @@
+[
+	{
+		"title": "Transat",
+		"description": "Mobile application gathering all essential services for the life of the IMT Atlantique campus",
+		"img": "transat",
+		"link": "http://lapalmeverte.vercel.app",
+		"languages": ["React", "TypeScript", "Expo", "TailwindCSS", "Go"]
+	},
+	{
+		"title": "La Palme Verte",
+		"description": "Showcase website, blog and photo gallery created for a student scuba diving association",
+		"img": "lapalmeverte",
+		"link": "http://lapalmeverte.vercel.app",
+		"languages": ["Next.js", "React", "Notion", "TailwindCSS", "Vercel"]
+	},
+	{
+		"title": "Punto",
+		"description": "Web application simulating the Punto board game allowing to play, generate, and view game history on different databases",
+		"img": "punto",
+		"link": "https://github.com/HeineZo/Punto",
+		"languages": ["Express", "React", "MySQL", "MongoDB", "SQLite", "TailwindCSS"]
+	},
+	{
+		"title": "DashLegends",
+		"description": "Local 2D platform video game player versus player",
+		"img": "dashlegends",
+		"link": "https://github.com/HeineZo/dash-legends",
+		"languages": ["Python"]
+	},
+	{
+		"title": "Onzer",
+		"description": "Fictional music streaming platform allowing to add tracks and create playlists",
+		"img": "onzer",
+		"link": "https://github.com/HeineZo/onzer",
+		"languages": ["Next.js", "React", "MongoDB", "TailwindCSS"]
+	},
+	{
+		"title": "Weather App",
+		"description": "Web application to check the weather for any city",
+		"img": "meteo",
+		"link": "https://github.com/HeineZo/meteo-app-vue",
+		"languages": ["Vue.js", "TailwindCSS"]
+	}
+]
+

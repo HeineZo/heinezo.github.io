@@ -1,0 +1,43 @@
+---
+import '@/styles/globals.css';
+import Layout from '@/layouts/Layout.astro';
+import { Empty, EmptyHeader, EmptyTitle, EmptyDescription, EmptyContent, EmptyMedia } from '@/components/ui/empty';
+import { Button } from '@/components/ui/button';
+import { FileQuestion } from 'lucide-react';
+import { locales, type Locale } from '@/i18n/config';
+import { t } from '@/i18n/utils';
+import { Image } from 'astro:assets';
+
+export function getStaticPaths() {
+	return Object.keys(locales).map((locale) => ({
+		params: { locale: locale as Locale },
+	}));
+}
+
+const { locale } = Astro.params;
+---
+
+<Layout title={`${t(locale, '404.title')} - Enzo Morvan`} locale={locale}>
+	<div class='w-full flex items-center justify-center py-32 min-h-[60vh]'>
+		<Empty client:load>
+			<EmptyHeader>
+				<EmptyMedia variant="default">
+					<Image
+						src="/src/assets/404.png"
+						alt="404"
+						width={200}
+						height={200}
+					/>
+				</EmptyMedia>
+				<EmptyTitle className='text-2xl font-bold'>{t(locale, '404.title')}</EmptyTitle>
+				<EmptyDescription className='text-lg'>{t(locale, '404.description')}</EmptyDescription>
+			</EmptyHeader>
+			<EmptyContent>
+				<a href={`/${locale}/`}>
+					<Button variant="default">{t(locale, '404.backHome')}</Button>
+				</a>
+			</EmptyContent>
+		</Empty>
+	</div>
+</Layout>
+

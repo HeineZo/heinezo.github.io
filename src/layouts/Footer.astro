@@ -1,12 +1,20 @@
 ---
 import links from '@/data/links.json';
+import { t } from '@/i18n/utils';
+import type { Locale } from '@/i18n/config';
+
+interface Props {
+	locale: Locale;
+}
+
+const { locale } = Astro.props;
 ---
 
 <footer
 	class='flex gap-8 flex-col sm:flex-row justify-between items-center p-6 border rounded-xl mt-20 md:mt-52 m-4'>
 	<span class="*:text-center sm:*:text-left">
 		<h3>Enzo.</h3>
-		<p class='text-muted-foreground'>Créé sous la 🌧️ avec le 😄</p>
+		<p class='text-muted-foreground'>{t(locale, 'common.createdWith')}</p>
 	</span>
 	<div class='flex gap-8 flex-wrap'>
 		{

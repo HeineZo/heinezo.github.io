@@ -1,5 +1,14 @@
 ---
 import ThemeToggle from '@/components/ui/ThemeToggle';
+import { LanguageToggle } from '@/components/LanguageToggle';
+import type { Locale } from '@/i18n/config';
+
+interface Props {
+	locale: Locale;
+}
+
+const { locale } = Astro.props;
+const currentPath = Astro.url.pathname;
 ---
 
 <nav
@@ -17,6 +26,7 @@ import ThemeToggle from '@/components/ui/ThemeToggle';
 			}
 		</div> -->
 		<div class='flex gap-2'>
+			<LanguageToggle currentLocale={locale} currentPath={currentPath} client:load />
 			<ThemeToggle client:load />
 		</div>
 	</div>

@@ -1,0 +1,43 @@
+{
+	"common": {
+		"projects": "Projets",
+		"skills": "Compétences",
+		"contact": "Contact",
+		"currently": "Actuellement",
+		"yearsOld": "ans",
+		"apprentice": "apprenti ingénieur logiciel",
+		"discover": "Découvrir",
+		"remaining": "Il reste",
+		"projectsToDiscover": "projets à découvrir",
+		"createdWith": "Créé sous la 🌧️ avec le 😄"
+	},
+	"hero": {
+		"title": "Enzo,",
+		"description": "Passionné par les architectures et le code propre, je passe mon temps libre à construire des projets personnels qui me poussent à aller plus loin dans ma réflexion et mes compétences",
+		"currently": "Actuellement",
+		"student": "Étudiant ingénieur logiciel en alternance chez"
+	},
+	"meta": {
+		"title": "Enzo Morvan",
+		"description": "Passionné par les architectures et le code propre, je passe mon temps libre à construire des projets personnels qui me poussent à aller plus loin dans ma réflexion et mes compétences",
+		"keywords": "portfolio, développement fullstack, développement frontend, react, tailwind, vuejs, nextjs, notion, figma, alternance, vannes, projets, compétences",
+		"ogTitle": "Portfolio d'Enzo Morvan",
+		"ogDescription": "Passionné par les architectures et le code propre, je passe mon temps libre à construire des projets personnels qui me poussent à aller plus loin dans ma réflexion et mes compétences"
+	},
+	"projects": {
+		"title": "Projets",
+		"remaining": "Il reste",
+		"many": "plein de",
+		"projectsToDiscover": "projets à découvrir",
+		"discover": "Découvrir"
+	},
+	"skills": {
+		"title": "Compétences"
+	},
+	"404": {
+		"title": "Impossible de trouver cette page",
+		"description": "Elle a peut-être été déplacée ou supprimée",
+		"backHome": "Revenir en lieu sûr"
+	}
+}
+

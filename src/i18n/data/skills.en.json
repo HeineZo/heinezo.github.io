@@ -1,0 +1,33 @@
+[
+	{
+		"title": "Teamwork",
+		"description": "My experience in the company and my numerous personal projects have led me to take leadership and develop good team spirit",
+		"icon": "fa-people-group",
+		"color": "indigo"
+	},
+	{
+		"title": "Curious",
+		"description": "I love exploring and learning to master new technologies, I'm always looking for new projects",
+		"icon": "fa-magnifying-glass",
+		"color": "teal"
+	},
+	{
+		"title": "Rigorous",
+		"description": "I try as much as possible to write clean and well-structured code, avoiding code hacking",
+		"icon": "fa-check",
+		"color": "orange"
+	},
+	{
+		"title": "Creative",
+		"description": "Versatile, I draw heavily from current trends and the applications I use to create modern and intuitive interfaces",
+		"icon": "fa-lightbulb",
+		"color": "yellow"
+	},
+	{
+		"title": "Passionate",
+		"description": "I'm always looking for new projects to bring my ideas to life and use the latest technologies I've discovered",
+		"icon": "fa-heart",
+		"color": "rose"
+	}
+]
+

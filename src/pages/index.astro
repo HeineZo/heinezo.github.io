@@ -1,13 +1,6 @@
 ---
-import '@/styles/globals.css';
-import Layout from '../layouts/Layout.astro';
-import Hero from '@/layouts/Hero.astro';
-import Projets from '@/layouts/Projects.astro';
-import Skills from '@/layouts/Skills.astro';
----
+// Rediriger vers la locale par défaut
+import { defaultLocale } from '@/i18n/config';
 
-<Layout title='Enzo Morvan'>
-	<Hero />
-	<Projets />
-	<Skills />
-</Layout>
+return Astro.redirect(`/${defaultLocale}/`, 302);
+---

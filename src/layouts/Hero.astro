@@ -3,6 +3,15 @@ import CurvedLinks from '@/components/CurvedLinks.astro';
 import { Link } from '@/components/ui/Link';
 import { Circle } from '@/icons/Circle';
 import { MoveDown } from 'lucide-react';
+import { t } from '@/i18n/utils';
+import type { Locale } from '@/i18n/config';
+import Age from '@/components/Age';
+
+interface Props {
+	locale: Locale;
+}
+
+const { locale } = Astro.props;
 ---
 
 <div class="md:h-[80dvh] flex flex-col items-center justify-between">
@@ -17,27 +26,24 @@ import { MoveDown } from 'lucide-react';
 							client:load
 						/>
 					</span>
-					Enzo,
+					{t(locale, 'hero.title')}
 				</div>
-				{new Date().getFullYear() - new Date('2003-08-13').getFullYear()} ans, apprenti ingénieur logiciel
+				<Age birthDate="2003-08-13" client:load /> {t(locale, 'common.yearsOld')}, {t(locale, 'common.apprentice')}
 			</h1>
 			<p>
-				Passionné par les architectures et le code propre, je passe mon
-				temps libre à construire des projets personnels qui me poussent à
-				aller plus loin dans ma réflexion et mes compétences
+				{t(locale, 'hero.description')}
 			</p>
 		</div>
 		<CurvedLinks />
 		<div class='center gap-2'>
 			<span class='px-4 py-2 rounded-full border border-foreground'>
-				Actuellement
+				{t(locale, 'hero.currently')}
 			</span>
 			<span>
-				Étudiant ingénieur logiciel en alternance chez 
+				{t(locale, 'hero.student')} 
 					<Link href='https://www.abtasty.com/'>
 						AB Tasty
 					</Link>
-				</Button>
 			</span>
 		</div>
 	</div>
