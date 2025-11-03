@@ -1,25 +1,40 @@
 ---
+import '@/styles/globals.css';
+import Layout from '@/layouts/Layout.astro';
+import Hero from '@/layouts/Hero.astro';
+import Projets from '@/layouts/Projects.astro';
+import Skills from '@/layouts/Skills.astro';
 import { defaultLocale } from '@/i18n/config';
-import { t } from '@/i18n/utils';
 
-const redirectUrl = `/${defaultLocale}/`;
+const locale = defaultLocale;
 ---
 
-<!DOCTYPE html>
-<html lang={defaultLocale}>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0;url={redirectUrl}">
-    <script>
-        window.location.replace('{redirectUrl}');
-    </script>
-    <title>Enzo Morvan</title>
-</head>
-<body>
-    <noscript>
-        <meta http-equiv="refresh" content="0;url={redirectUrl}">
-        <a href={redirectUrl}>{t(defaultLocale, '404.backHome')}</a>
-    </noscript>
-</body>
-</html>
+<Layout title='Enzo Morvan' locale={locale}>
+	<Hero locale={locale} />
+	<Projets locale={locale} />
+	<Skills locale={locale} />
+</Layout>
+
+<script is:inline>
+	if (window.history && window.history.replaceState && window.location.pathname === '/') {
+		window.history.replaceState(null, '', '/fr/');
+	}
+
+	(function() {
+		setTimeout(function() {
+			const cookie = document.cookie;
+			const localeMatch = cookie.match(/preferred-locale=([^;]+)/);
+			if (localeMatch && localeMatch[1] === 'en') {
+				window.location.replace('/en/');
+				return;
+			}
+
+			if (typeof localStorage !== 'undefined') {
+				const savedLocale = localStorage.getItem('preferred-locale');
+				if (savedLocale === 'en') {
+					window.location.replace('/en/');
+				}
+			}
+		}, 0);
+	})();
+</script>
