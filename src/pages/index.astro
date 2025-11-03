@@ -1,6 +1,25 @@
 ---
-// Rediriger vers la locale par défaut
 import { defaultLocale } from '@/i18n/config';
+import { t } from '@/i18n/utils';
 
-return Astro.redirect(`/${defaultLocale}/`, 302);
+const redirectUrl = `/${defaultLocale}/`;
 ---
+
+<!DOCTYPE html>
+<html lang={defaultLocale}>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="0;url={redirectUrl}">
+    <script>
+        window.location.replace('{redirectUrl}');
+    </script>
+    <title>Enzo Morvan</title>
+</head>
+<body>
+    <noscript>
+        <meta http-equiv="refresh" content="0;url={redirectUrl}">
+        <a href={redirectUrl}>{t(defaultLocale, '404.backHome')}</a>
+    </noscript>
+</body>
+</html>
