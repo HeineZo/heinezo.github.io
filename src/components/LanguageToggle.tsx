@@ -9,7 +9,6 @@ import {
 import { Globe } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import { locales } from "@/i18n/config";
-import { savePreferredLocale } from "@/i18n/client-detection";
 
 interface LanguageToggleProps {
 	currentLocale: Locale;
@@ -18,14 +17,13 @@ interface LanguageToggleProps {
 
 export function LanguageToggle({ currentLocale, currentPath }: LanguageToggleProps) {
 	const switchLanguage = (newLocale: Locale) => {
-		savePreferredLocale(newLocale);
-		
-		// Définir un cookie pour la préférence (pour les requêtes suivantes)
-		document.cookie = `preferred-locale=${newLocale}; path=/; max-age=31536000`; // 1 an
-		
-		// Remplacer la locale dans le chemin
-		const pathWithoutLocale = currentPath.replace(/^\/(fr|en)\//, '/');
-		const newPath = pathWithoutLocale === '/' ? `/${newLocale}/` : `/${newLocale}${pathWithoutLocale}`;
+		const pathWithoutLocale = currentPath.replace(/^\/fr(\/|$)/, '/');
+		const newPath =
+			newLocale === 'fr'
+				? pathWithoutLocale === '/'
+					? '/fr/'
+					: `/fr${pathWithoutLocale}`
+				: pathWithoutLocale;
 		window.location.href = newPath;
 	};
 
@@ -51,4 +49,3 @@ export function LanguageToggle({ currentLocale, currentPath }: LanguageTogglePro
 		</DropdownMenu>
 	);
 }
-

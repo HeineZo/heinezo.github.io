@@ -27,7 +27,7 @@ const repos = await reposData.json();
 const nbProjects = repos.length - projects.length;
 ---
 
-<div id='projets' class='w-full flex flex-col items-start gap-8'>
+<div id='projects' class='w-full flex flex-col items-start gap-8'>
 	<h2>{t(locale, 'projects.title')}</h2>
 	<TracingBeam client:load>
 		<div class='flex flex-col gap-16 w-full max-w-5xl'>

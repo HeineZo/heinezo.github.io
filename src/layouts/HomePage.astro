@@ -4,20 +4,17 @@ import Layout from '@/layouts/Layout.astro';
 import Hero from '@/layouts/Hero.astro';
 import Projets from '@/layouts/Projects.astro';
 import Skills from '@/layouts/Skills.astro';
-import { locales, type Locale } from '@/i18n/config';
+import type { Locale } from '@/i18n/config';
 
-export function getStaticPaths() {
-	return Object.keys(locales).map((locale) => ({
-		params: { locale: locale as Locale },
-	}));
+interface Props {
+	locale: Locale;
 }
 
-const { locale } = Astro.params;
+const { locale } = Astro.props;
 ---
 
-<Layout title='Enzo Morvan' locale={locale}>
+<Layout locale={locale}>
 	<Hero locale={locale} />
 	<Projets locale={locale} />
 	<Skills locale={locale} />
 </Layout>
-

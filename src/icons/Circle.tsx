@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 export const Circle = ({ size = 24, ...props }) => {
 	return (

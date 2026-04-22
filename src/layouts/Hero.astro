@@ -1,6 +1,7 @@
 ---
 import CurvedLinks from '@/components/CurvedLinks.astro';
 import { Link } from '@/components/ui/Link';
+import { HoverBorderGradient } from '@/components/ui/HoverBorderGradient';
 import { Circle } from '@/icons/Circle';
 import { MoveDown } from 'lucide-react';
 import { t } from '@/i18n/utils';
@@ -14,7 +15,8 @@ interface Props {
 const { locale } = Astro.props;
 ---
 
-<div class="md:h-[80dvh] flex flex-col items-center justify-between">
+<div id="home" class="h-[80dvh] md:h-[90dvh] flex flex-col items-center justify-between scroll-mt-24">
+	<p class="text-background font-bold">{t(locale, 'hero.easterEgg')}</p>
 	<div class='center gap-8 md:mt-24'>
 		<div class='max-w-xl center gap-2'>
 			<h1 class='w-fit'>
@@ -36,9 +38,14 @@ const { locale } = Astro.props;
 		</div>
 		<CurvedLinks />
 		<div class='center gap-2'>
-			<span class='px-4 py-2 rounded-full border border-foreground'>
+			<HoverBorderGradient
+				as='span'
+				containerClassName='rounded-full'
+				className='px-4 py-2'
+				client:load
+			>
 				{t(locale, 'hero.currently')}
-			</span>
+			</HoverBorderGradient>
 			<span>
 				{t(locale, 'hero.student')} 
 					<Link href='https://www.abtasty.com/'>
@@ -47,5 +54,5 @@ const { locale } = Astro.props;
 			</span>
 		</div>
 	</div>
-	<MoveDown className='animate-bounce hidden md:block' />
+	<MoveDown className='animate-bounce' />
 </div>

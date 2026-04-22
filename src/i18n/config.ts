@@ -5,12 +5,7 @@ export const locales = {
 
 export type Locale = keyof typeof locales;
 
-export const defaultLocale: Locale = 'fr';
-
-// Liste des pays anglophones (codes ISO 3166-1 alpha-2)
-export const englishSpeakingCountries = [
-	'US', 'GB', 'CA', 'AU', 'NZ', 'IE', 'ZA', 'SG', 'MY', 'PH', 'IN', 'PK', 'BD', 'LK', 'NG', 'KE', 'GH', 'ZW', 'ZM', 'MW', 'UG', 'TZ', 'RW', 'JM', 'TT', 'BB', 'GD', 'BS', 'AG', 'LC', 'VC', 'KN', 'DM', 'BZ', 'GY', 'SR', 'FJ', 'PG', 'SB', 'VU', 'NR', 'PW', 'MH', 'FM', 'WS', 'TO', 'KI', 'TV', 'NA', 'BW', 'LS', 'SZ', 'MZ'
-];
+export const defaultLocale: Locale = 'en';
 
 export function getLocaleFromPath(pathname: string): Locale {
 	const segments = pathname.split('/').filter(Boolean);
@@ -33,4 +28,3 @@ export function getPathWithoutLocale(pathname: string): string {
 	
 	return pathname;
 }
-
