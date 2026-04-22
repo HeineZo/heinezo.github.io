@@ -3,10 +3,10 @@ import { cn } from '@/lib/utils';
 import { Image } from 'astro:assets';
 import BrandIcon from './ui/BrandIcon';
 import { Button } from './ui/button';
+import type { Locale } from '@/i18n/config';
+import { t } from '@/i18n/utils';
 
-
-
-const { title, description, img, link, languages, className } = Astro.props;
+const { title, description, img, link, languages, className, locale } = Astro.props;
 
 const images:{[index:string]:any} ={}
 await Astro.glob("/src/assets/*.png").then((files) => {
@@ -43,7 +43,7 @@ const image = images[img];
 			</p>
 		</div>
 		<a href={link} class='w-fit'>
-			<Button variant='secondary'>Voir</Button>
+			<Button variant='secondary'>{t(locale, 'projects.view')}</Button>
 		</a>
 	</div>
 </div>
