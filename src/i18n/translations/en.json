@@ -3,13 +3,12 @@
 		"projects": "Projects",
 		"skills": "Skills",
 		"contact": "Contact",
-		"currently": "Currently",
 		"yearsOld": "years old",
 		"apprentice": "apprentice software engineer",
 		"discover": "Discover",
 		"remaining": "There are",
 		"projectsToDiscover": "more projects to discover",
-		"createdWith": "Created with 🌧️ and 😄"
+		"portfolio": "Enzo's Portfolio"
 	},
 	"hero": {
 		"easterEgg": "Look in the console",
@@ -39,6 +38,12 @@
 		"title": "Unable to find this page",
 		"description": "It may have been moved or deleted",
 		"backHome": "Return to the home page"
+	},
+	"footer": {
+		"handcrafted": "Hand crafted with 🥖 and ❤️‍🔥",
+		"navigation": "Navigation",
+		"socials": "Socials",
+		"rights": "All rights reserved."
 	}
 }
 

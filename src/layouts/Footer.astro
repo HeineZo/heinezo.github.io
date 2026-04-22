@@ -1,28 +1,75 @@
 ---
-import links from '@/data/links.json';
-import { t } from '@/i18n/utils';
-import type { Locale } from '@/i18n/config';
+import links from "@/data/links.json";
+import { t } from "@/i18n/utils";
+import type { Locale } from "@/i18n/config";
+import { FooterSocialLinks } from "@/components/FooterSocialLinks";
 
 interface Props {
-	locale: Locale;
+  locale: Locale;
 }
 
 const { locale } = Astro.props;
+const year = new Date().getFullYear();
+const homeHref = locale === "en" ? "/" : "/fr/";
+
+const navItems = [
+  { name: t(locale, "common.projects"), href: "#projects" },
+  { name: t(locale, "common.skills"), href: "#skills" },
+];
+
+const socialLinks = links.filter((link) => link.href);
 ---
 
 <footer
-	class='flex gap-8 flex-col sm:flex-row justify-between items-center p-6 border rounded-xl mt-20 md:mt-52 m-4'>
-	<span class="*:text-center sm:*:text-left">
-		<h3>Enzo.</h3>
-		<p class='text-muted-foreground'>{t(locale, 'common.createdWith')}</p>
-	</span>
-	<div class='flex gap-8 flex-wrap'>
-		{
-			links.map((link) => link.href && (
-				<a aria-label={link.name} href={link.href} class="text-foreground/80 hover:text-foreground/50 text-2xl">
-					<i class={` fa-solid ${link.icon}`} />
-				</a>
-			))
-		}
-	</div>
+  class="relative mt-20 w-full overflow-hidden border-t border-neutral-100 bg-white px-8 py-20 md:mt-40 dark:border-white/[0.1] dark:bg-neutral-950"
+>
+  <div
+    class="mx-auto flex max-w-7xl flex-col items-start justify-between text-sm text-neutral-500 sm:flex-row md:px-8"
+  >
+    <div>
+      <a class="flex space-x-2" href={homeHref}>
+        <img alt="Logo" width="30" height="30" class="object-contain h-8 mt-0.5" src="/favicon.png" />
+        <div>
+          <h3 class="text-foreground">{t(locale, "common.portfolio")}</h3>
+          <p>{t(locale, "footer.handcrafted")}</p>
+        </div>
+      </a>
+    </div>
+    <div class="mt-10 grid grid-cols-2 items-start gap-10 sm:mt-0">
+      <div class="flex w-full flex-col space-y-4">
+        <p
+          class="font-bold text-neutral-600 transition-colors dark:text-neutral-300"
+        >
+          {t(locale, "footer.navigation")}
+        </p>
+        <ul class="list-none space-y-4 text-neutral-600 dark:text-neutral-300">
+          {
+            navItems.map((item) => (
+              <li class="list-none">
+                <a
+                  class="transition-colors hover:text-neutral-800 dark:hover:text-white"
+                  href={item.href}
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="flex flex-col space-y-4">
+        <p
+          class="font-bold text-neutral-600 transition-colors dark:text-neutral-300"
+        >
+          {t(locale, "footer.socials")}
+        </p>
+        <FooterSocialLinks links={socialLinks} client:idle />
+      </div>
+    </div>
+  </div>
+  <p
+    class="mt-20 bg-gradient-to-b from-neutral-50 to-neutral-200 bg-clip-text text-center text-5xl font-bold text-transparent select-none md:text-9xl lg:text-[12rem] xl:text-[13rem] dark:from-neutral-950 dark:to-neutral-800"
+  >
+    Enzo
+  </p>
 </footer>

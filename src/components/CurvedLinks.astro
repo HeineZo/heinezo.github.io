@@ -9,7 +9,7 @@ import links from '@/data/links.json';
 			<a
 				href={link.href ?? null}
 				target='_blank'
-				class='bg-foreground rounded-3xl ring-2 ring-transparent hover:ring-foreground center shrink-0 h-20 aspect-square relative transition duration-500 hover:scale-105 group transform sm:[&:nth-child(1)]:mt-3 sm:[&:nth-child(1)]:-rotate-6 sm:[&:nth-child(2)]:mt-1 sm:[&:nth-child(2)]:-rotate-3 sm:[&:nth-child(4)]:mt-1 sm:[&:nth-child(4)]:rotate-3 sm:[&:nth-child(5)]:mt-3 sm:[&:nth-child(5)]:rotate-6'>
+				class='z-20 bg-foreground rounded-3xl ring-2 ring-transparent hover:ring-foreground center shrink-0 h-20 aspect-square relative transition duration-500 hover:scale-105 group transform sm:[&:nth-child(1)]:mt-3 sm:[&:nth-child(1)]:-rotate-6 sm:[&:nth-child(2)]:mt-1 sm:[&:nth-child(2)]:-rotate-3 sm:[&:nth-child(4)]:mt-1 sm:[&:nth-child(4)]:rotate-3 sm:[&:nth-child(5)]:mt-3 sm:[&:nth-child(5)]:rotate-6'>
 				<i class={`text-background text-2xl fa-solid ${link.icon}`} />
 				<span class='hidden sm:flex gap-1 items-center justify-center bg-foreground px-6 py-2 absolute opacity-0 top-full -translate-y-2 text-nowrap group-hover:opacity-100 group-hover:translate-y-0 rounded-full mt-4 transition-all duration-500'>
 					<p class='text-background nowrap'>{link.name}</p>
